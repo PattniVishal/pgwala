@@ -1,0 +1,31 @@
+<div class="jumbotron">
+    <h1 class="display-4">My Profile</h1>
+</div>
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-3 p-3">
+            <p class="text-muted">Manage Account</p>
+            <hr>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['profile']" routerLinkActive="active">
+                        <i class="far fa-user"></i> My Profile
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="loggedInUser.role == 'seller'">
+                    <a class="nav-link" [routerLink]="['property']" routerLinkActive="active">
+                        <i class="fas fa-hotel"></i> My Properties
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-key"></i> Change Password
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-9 p-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

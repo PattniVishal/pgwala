@@ -1,0 +1,110 @@
+ResponseDTO
+{
+	status: int,
+	message: string,
+	data: Object
+}
+-----------------------------------------------
+LoginDTO
+{
+  "id": string,
+  "userName": string,
+  "password": string,
+  "role": string
+}
+-----------------------------------------------
+-----------------------------------------------
+LoginDTO.userName = UserDTO.email
+-----------------------------------------------
+-----------------------------------------------
+UserDTO
+{
+	id: string,
+	name: string
+	email: string
+	password: string
+	verified: boolean [default = true]
+	createdDate: Date
+}
+-----------------------------------------------
+-----------------------------------------------
+ServiceProvider
+{
+	id: String,
+	name String,
+	email: String,
+	password: String,
+	createdDate: Date,
+	verifiedByAdmin: boolean,
+	properties: Property[]
+	{
+		id: String,
+		propertyName: String,
+		address: Address
+		{
+			id: String,
+			houseNumber String,
+			landmark: String,
+			area: String,
+			city: String,
+			state: String
+		},
+		accomodationTypes: AccomodationType[]
+		{
+			id: String,
+			sharing String,
+			price: String
+		},
+		facilities: Facility[]
+		{
+			id: String,
+			facility: String,
+			icon: String
+		},
+		genders: String[],
+		description: String
+	}
+}
+-----------------------------------------------
+
+-----------------------------------------------
+Property payload
+{
+    "propertyName": "Yellow Estate",
+    "address":
+            {
+                "houseNumber": "24",
+                "landmark": "Cricket Stadium",
+                "area": "Adajan",
+                "city": "Surat",
+                "state": "Gujarat"
+            },
+    "accomodationTypes":
+            [
+                {
+                    "sharing": "1-sharing",
+                    "price": "2000"
+                },
+                {
+                    "sharing": "2-sharing",
+                    "price": "1000"
+                }
+            ],
+    "facilities":
+            [
+                {
+                    "facility": "Parking",
+                    "icon": "parking-icon"
+                },
+                {
+                    "facility": "Fan",
+                    "icon": "fan-icon"
+                }
+            ],
+    "genders":
+            [
+                "One",
+                "Two"
+            ],
+    "description": "This is description"
+}

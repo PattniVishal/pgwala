@@ -1,0 +1,9 @@
+1. UserController - /api/v1/users
+	- /registerCustomer			[POST][Parameters: Customer object, Returns: Customer in ResponseDTO]
+	- /registerServiceProvider	[POST][Parameters: ServiceProvider object, Returns: ServiceProvider in ResponseDTO]
+	- /login					[POST][Parameters: userName and password, Returns: Customer/ServiceProvider in ResponseDTO]
+	
+2. PropertyController - /api/v1/properties
+	- /addProperty/{userName}	[POST][Parameters: Property object, Returns: ServiceProvider in ResponseDTO]
+	- /getProperty/{id}			[GET][Parameters: , Returns: Property in ResponseDTO]
+	- /deleteProperty/{id}		[DELETE][Parameters: , Returns: null in ResponseDTO]

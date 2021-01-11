@@ -1,0 +1,21 @@
+<div *ngIf="!user" style="text-align: center;">
+    <app-loader></app-loader>
+</div>
+<div class="card border-secondary p-3" style=" max-width: 60%;" *ngIf="user">
+    <div class="container mb-3 py-3">
+        <img class="img-thumbnail mx-auto d-block" src="../../../assets/profile_picture.jpg"
+            style="max-height: 200px;" alt="profile-picture">
+    </div>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" value="{{ user.name }}" disabled>
+    </div>
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" value="{{ user.email }}" disabled>
+    </div>
+    <div class="form-group" *ngIf="user.aadharNumber">
+        <label for="aadhar-number">Aadhar Number:</label>
+        <input type="text" class="form-control" id="aadhar-number disabledInput" value="{{ user.aadharNumber }}" disabled>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+APPLICATION STRUCTURE:
+    DiscoveryService:
+        start.spring.io:
+            spring-boot-version: 2.4.1
+            group: com.pgwala
+            artifact: DiscoveryService
+            name: DiscoveryService
+            description: discovery service
+            package: com.pgwala.discoveryService
+            java-version: 11
+            dependencies:
+                Spring Web
+                Eureka Server
+
+    GatewayService:
+        start.spring.io:
+            spring-boot-version: 2.3.7
+            group: com.pgwala
+            artifact: GatewayService
+            name: GatewayService
+            description: gateway service for application
+            package: com.pgwala.gatewayService
+            java-version: 11
+            dependencies:
+                Spring Web
+                Eureka Discovery Client
+                Zuul
+                
+    AuthService:
+        start.spring.io:
+            spring-boot-version: 2.4.1
+            group: com.pgwala
+            artifact: AuthService
+            name: AuthService
+            description: services related to auth
+            package: com.pgwala.authService
+            java-version: 11
+            dependencies:
+                Spring Web
+                Lombok
+                Eureka Discovery Client
+                Spring Data MongoDB
+                Spring Security
+
+    BuyerService:
+        start.spring.io:
+            spring-boot-version: 2.4.1
+            group: com.pgwala
+            artifact: BuyerService
+            name: BuyerService
+            description: services related to buyers
+            package: com.pgwala.buyerService
+            java-version: 11
+            dependencies:
+                Spring Web
+                Lombok
+                Eureka Discovery Client
+                Spring Data MongoDB
+                ModelMapper
+                Spring Security
+                
+    SellerService:
+        start.spring.io:
+            spring-boot-version: 2.4.1
+            group: com.pgwala
+            artifact: SellerService
+            name: SellerService
+            description: services related to sellers
+            package: com.pgwala.sellerService
+            java-version: 11
+            dependencies:
+                Spring Web
+                Lombok
+                Eureka Discovery Client
+                Spring Data MongoDB
+                ModelMapper
+                Spring Security
+                
+    PropertyService:
+        start.spring.io:
+            spring-boot-version: 2.4.1
+            group: com.pgwala
+            artifact: PropertyService
+            name: PropertyService
+            description: services related to property
+            package: com.pgwala.propertyService
+            java-version: 11
+            dependencies:
+                Spring Web
+                Lombok
+                Eureka Discovery Client
+                Spring Data MongoDB
+                ModelMapper
+                Spring Security

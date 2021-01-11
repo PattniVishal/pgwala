@@ -1,0 +1,48 @@
+BUYER SERVICE:
+    dbUsed: MongoDB
+    
+    collection: buyerDB
+    
+    [GET]:
+        api/v1/buyers:
+            description: Get list of all buyers
+            parameters: none
+            returns: List<Buyer>
+            
+        api/v1/buyers/{email}:
+            description: Get buyer using email
+            parameters: none
+            returns: BuyerDTO
+        
+    [POST]:
+        api/v1/buyers:
+            description: Adds new Buyer
+            parameters: BuyerDTO (RequestBody)
+            returns: BuyerDTO
+            
+    [PUT]:
+        api/v1/buyers/{email}:
+            description: Update existing buyer
+            parameters: BuyerDTO (RequestBody)
+            returns: BuyerDTO
+            
+    [DELETE]:
+        api/v1/buyers/{email}:
+            description: Deletes a buyer
+            parameters: none
+            returns: none
+            
+    DTOs & Entity:
+        BuyerDTO:
+            name: String
+            email: String
+            password: String
+            role: String
+            
+        BuyerEntity:
+            id: ObjectId
+            name: String
+            email: String
+            password: String
+            role: String
+            createdDate: Date

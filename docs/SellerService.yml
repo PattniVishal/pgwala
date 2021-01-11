@@ -1,0 +1,64 @@
+SELLER SERVICE:
+    dbUsed: MongoDB
+    
+    collection: sellerDB
+    
+    [GET]:
+        api/v1/sellers:
+            description: Get list of all sellers
+            parameters: none
+            returns: List<SellerDTO>
+            
+        api/v1/sellers/{email}:
+            description: Get seller using email
+            parameters: none
+            returns: SellerDTO
+            
+    [POST]:
+        api/v1/sellers:
+            description: Adds new seller
+            parameters: SellerDTO (RequestBody)
+            returns: SellerDTO
+         
+    [PUT]:
+        api/v1/sellers/{email}:
+            description: Updates existing seller
+            parameters: SellerDTO (RequestBody)
+            returns: SellerDTO
+            
+    [DELETE]:
+        api/v1/sellers/{email}:
+            description: Deletes a seller
+            parameters: none
+            returns: none
+            
+    DTOs & Entity:
+        SellerDTO:
+            name: String
+            email: String
+            password: String
+            role: String
+            aadhar-number: String
+            properties: Property
+            
+        SellerEntity:
+            id: ObjectId
+            name: String
+            email: String
+            password: String
+            role: String
+            aadhar-number: String
+            createdDate: Date
+            properties: Property
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            

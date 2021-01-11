@@ -1,0 +1,127 @@
+<div class="container card border-secondary">
+    <form #propertyForm="ngForm" (ngSubmit)="onSaveClicked(propertyForm)">
+        <div class="row p-3">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="property-name">Property Name:</label>
+                    <input type="text" ngModel name="propertyName" class="form-control" value="">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <div class="row mb-1">
+                        <div class="col-md-6">
+                            <input type="text" ngModel name="houseNumber" class="form-control" value=""
+                                placeholder="House Number / Building Number">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" ngModel name="landmark" class="form-control" value=""
+                                placeholder="Landmark">
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-md-6">
+                            <select class="form-control" ngModel name="area" id="area">
+                                <option>Area 1</option>
+                                <option>Area 2</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-control" ngModel name="city" id="city">
+                                <option>City 1</option>
+                                <option>City 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="accomodation-type">Accomodation Type:</label>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" ngModel name="sharing" type="checkbox" value="">1 -
+                                    Sharing
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" ngModel name="price" value=""
+                                    placeholder="Enter Price" *ngIf="propertyForm.value.sharing">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="facilities">Facilities:</label>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" ngModel name="facility1" type="checkbox"
+                                        value="">Parking
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" ngModel name="facility2" type="checkbox" value="">RO
+                                    Water
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" ngModel name="facility3" type="checkbox"
+                                        value="">24x7
+                                    Water
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="genders-allowed">Genders Allowed:</label>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" ngModel name="genderMale" type="checkbox"
+                                        value="">Male
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" ngModel name="genderMale" type="checkbox"
+                                        value="">Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" ngModel name="description"></textarea>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-primary mx-2" (click)="onSaveClicked(propertyForm)">Save</button>
+                <button type="button" class="btn btn-danger mx-2">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

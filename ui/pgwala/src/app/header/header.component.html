@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">PGWALA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" style="cursor: pointer;">
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+            <li *ngIf="isAuthenticated" style="cursor: pointer;"><a class="nav-link mr-sm-2" (click)="onLogoutClicked()">Logout</a></li>
+            <li *ngIf="isAuthenticated">
+                <div class="media rounded px-2" style="cursor: pointer;" [routerLink]="['/user']">
+                    <img src="../../assets/profile_picture.jpg" alt="profile_picture"
+                        class="mx-1 rounded-circle img-responsive" style="max-width:35px;">
+                    <div class="media-body">
+                        <!-- <i class="fas fa-sort-down"></i> -->
+                    </div>
+                </div>
+            </li>
+            <li *ngIf="!isAuthenticated"><a class="nav-link mr-sm-2" [routerLink]="['/auth']" routerLinkActive="active"><i
+                        class="fas fa-sign-in-alt"></i> Login / Register</a></li>
+            <li *ngIf="!isAuthenticated"><button class="btn btn-secondary my-2 my-sm-0">Submit Property</button></li>
+        </ul>
+    </div>
+</nav>

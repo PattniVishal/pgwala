@@ -1,0 +1,39 @@
+<div class="jumbotron">
+    <h1 class="display-4">Search Properties</h1>
+</div>
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-3 p-3">
+            <p class="text-muted">Filter Properties</p>
+            <hr>
+            <div class="form-group">
+                <div class="row px-3">
+                    <div class="col-12 mb-2">
+                        <select class="form-control" id="area">
+                            <option>Area 1</option>
+                            <option>Area 2</option>
+                        </select>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <select class="form-control" id="city">
+                            <option>City 1</option>
+                            <option>City 2</option>
+                        </select>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <select class="form-control" id="accomodation-type">
+                            <option>Type 1</option>
+                            <option>Type 2</option>
+                        </select>
+                    </div>
+                    <div class="col mb-2">
+                        <button type="button" class="btn btn-dark" [routerLink]="['/searchProperty']">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9 p-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

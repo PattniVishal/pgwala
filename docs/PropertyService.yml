@@ -1,0 +1,54 @@
+PROPERTY SERVICE:
+    dbUsed: MongoDB
+    
+    collection: propertyDB
+    
+    [GET]:
+        api/v1/properties:
+            description: Get list of all properties
+            parameters: none
+            returns: List<PropertyDTO>
+            
+        api/v1/properties/{id}:
+            description: Get property using id
+            parameters: none
+            returns: PropertyDTO
+            
+    [POST]:
+        api/v1/properties/{email}/addProperty:
+            description: Add new property using email
+            parameters: PropertyDTO (RequestBody)
+            returns: PropertyDTO
+         
+    [PUT]:
+        api/v1/properties/{email}/updateProperty/{id}:
+            description: Update property using id
+            parameters: PropertyDTO (RequestBody)
+            returns: PropertyDTO
+            
+    [DELETE]:
+        api/v1/properties/{email}/deleteProperty/{id}:
+            description: Delete property using id
+            parameters: none
+            returns: none
+            
+    DTOs & Entity:
+        PropertyEntity & PropertyDTO:
+            id: ObjectId
+            propertyName: String
+            address: Address
+            accomodationTypes: List<AccomodationType>
+            facilities: List<Facilities>
+            genders: List<String>
+            description: String
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            

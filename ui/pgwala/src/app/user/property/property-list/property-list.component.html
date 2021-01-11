@@ -1,0 +1,33 @@
+<div *ngIf="!properties" style="text-align: center;">
+    <app-loader></app-loader>
+</div>
+<div class="row" *ngIf="properties">
+    <div class="col p-5">
+        <div class="card border-secondary mb-3" *ngFor="let property of properties">
+            <div class="row">
+                <div class="col-2">
+                    <img src="../../assets/home_profile.png" alt="..." class="img-fluid m-2">
+                </div>
+                <div class="col-10">
+                    <div class="row p-1">
+                        <div class="col-9">
+                            <h4>{{ property.propertyName }}</h4>
+                            <h6><i class="fas fa-map-marker-alt"></i>
+                                {{ property.address.area }}, {{ property.address.city }}</h6>
+                        </div>
+                        <div class="col-3 p-1"><button type="button" class="btn btn-primary"
+                                [routerLink]="['propertyDetail',property.id]">Explore</button></div>
+                    </div>
+                    <div class="row p-1">
+                        <div class="col-md-3"><i class="far fa-building"></i> Hostel</div>
+                        <div class="col-md-3"><i class="fas fa-male"></i><i class="fas fa-female"></i>
+                            {{ property.genders }}</div>
+                        <div class="col-md-3">
+                            <i class="fas fa-rupee-sign"></i> {{ property.accomodationTypes[0].price }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
